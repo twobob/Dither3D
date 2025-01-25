@@ -84,6 +84,33 @@ The script also generates PNG image files, where the different layers are laid o
 - `Dither3D_4x4.png`
 - `Dither3D_8x8.png`
 
+## Discussion of surface-stable trait
+
+Here is how I define surface-stable:
+
+- A specific dot "sticks" to the surface whose shading it is part of, both under object movement and camera movement.
+- When a pattern is enlarged on the screen, for example due to zooming in on a surface, additional dots may be added to maintain the desired dot density, but no dots may be removed. Likewise, when a pattern shrinks on the screen, dots may be removed, but no dots may be added.
+
+Conforming to the second constraint is in particular what is new in Surface-Stable Fractal Dithering. Approaches that fade between different scales of a pattern, which is not self-similar in the required way, will typically see dots both appearing and disappearing when zooming in.
+
+### Bayer matrices
+
+My implementation conforms to the second constraint by exploiting a certain "fractal" property of Bayer matrices, as explained in the video above.
+
+### Other regular patterns
+
+Some people have suggested using other regular patterns than Bayer for the dithering, based on triangles, hexes, square root 2 ratio rectangles, or similar. This should be relatively straightforward to implement for someone who so desires.
+
+### Blue noise patterns
+
+Some people have suggested using blue noise for the pattern. But it is not straightforward to construct a blue noise pattern which is self-similar in a way that conforms to the second surface-stable constraint.
+
+If we use only a single tiled square of blue noise pattern, it would require the dots in each quadrant of the pattern, and each recursive quadrant of the pattern, to perfectly line up with dots in the full pattern, when scaled up to cover the same area as the full pattern.
+
+Some people have pointed to the paper "Recursive Wang Tiles for Real-Time Blue Noise" by Johannes Kopf et al ([paper](https://johanneskopf.de/publications/blue_noise/paper/Recursive_Wang_Tiles_For_Real-Time_Blue_Noise.pdf) and [video](https://www.youtube.com/watch?v=ykACzjtR6rc)). While the paper describes their technique making use of self-similar blue noise patterns, the practical demonstration in the video shows dots fading both in and out while zooming in, so while I do not fully understand their technique in detail, it does not seem to conform to the second surface-stable constraint.
+
+I hope others will manage to construct a tiled blue-noise pattern with the required properties.
+
 ## License
 
 This Surface-Stable Fractal Dithering implementation is licensed under the [Mozilla Public License, v. 2.0](https://mozilla.org/MPL/2.0/).
