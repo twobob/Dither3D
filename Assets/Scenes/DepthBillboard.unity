@@ -130,10 +130,7 @@ GameObject:
   - component: {fileID: 195329823}
   - component: {fileID: 195329827}
   - component: {fileID: 195329826}
-  - component: {fileID: 195329825}
-  - component: {fileID: 195329824}
   - component: {fileID: 195329828}
-  - component: {fileID: 195329829}
   m_Layer: 0
   m_Name: Quad
   m_TagString: Untagged
@@ -151,47 +148,11 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 100, y: 100, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 562390932}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &195329824
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 195329822}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efa3d34c0a342c042ac46ce6a6ae1420, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colorTexture: {fileID: 2800000, guid: 818a4f3c477c44de995b42b27502350a, type: 3}
-  depthTexture: {fileID: 0}
---- !u!64 &195329825
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 195329822}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &195329826
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -254,34 +215,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 195329822}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71f3c2e5fd3cbb94d87d76955a2e460a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_loadOnStart: 0
-  m_loadOnStartUrl: 
-  m_filterMode: 0
-  m_wrapMode: 1
-  m_targetRenderer: {fileID: 0}
-  m_rotateOnLoading: 0
-  m_outputDebugLog: 0
---- !u!114 &195329829
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 195329822}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71f3c2e5fd3cbb94d87d76955a2e460a, type: 3}
+  m_Script: {fileID: 11500000, guid: 48d18d025e419a44cbf5e765be490a35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_loadOnStart: 1
-  m_loadOnStartUrl: https://media1.tenor.com/m/BT2HQV1VGuUAAAAd/online-here.gif
+  m_loadOnStartUrl: https://raw.githubusercontent.com/twobob/Dither3D/cb6d00505a1eb78de065fd549d521b7f7c9c4e0d/Assets/Online_gifs/A%20colourful%20sunrise%20with%20trails%20of%20crepuscular%20shafts%20over%20a%20golden%20Buddhist%20temple%20in%20the%20foggy%20mountains%204k%20high%20resolution%20-%20Copy.gif
   m_filterMode: 0
   m_wrapMode: 1
-  m_targetRenderer: {fileID: 195329826}
-  m_rotateOnLoading: 0
+  m_targetRenderer: {fileID: 0}
+  m_rotateOnLoading: 1
   m_outputDebugLog: 0
 --- !u!1 &262623324
 GameObject:
@@ -308,7 +250,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 262623324}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &262623326
 Camera:
   m_ObjectHideFlags: 0
@@ -343,8 +285,8 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
-  orthographic size: 0.75
+  orthographic: 1
+  orthographic size: 76
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -357,7 +299,7 @@ Camera:
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
+  m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
 --- !u!4 &262623327
